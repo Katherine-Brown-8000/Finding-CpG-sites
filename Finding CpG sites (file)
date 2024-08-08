@@ -1,4 +1,7 @@
-file_path = 'C:/Users/your username/Desktop/epigenetics_file_1.txt'
+# Edit Where it says 'your_username' to match what your computers name is
+# Edit where it says epigenetics_file_1 to whatever the name of your file it
+
+file_path = 'C:/Users/your_username/Desktop/epigenetics_file_1.txt'
 
 def find_cpg_sites(sequence):
 
