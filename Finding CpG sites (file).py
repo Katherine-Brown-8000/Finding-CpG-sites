@@ -1,7 +1,15 @@
 # Edit Where it says 'your_username' to match what your computers name is
 # Edit where it says epigenetics_file_1 to whatever the name of your file it
 
-file_path = r'C:/Users/username/Desktop/epigenetics_file_1.txt'
+file_name = r"C:\Users\your_username\Downloads\epigenetics_file_1.fa"
+
+def read_file(file_name):
+    with open(file_name, 'r') as file:
+        content = file.readlines()
+        sequence = "".join([line.strip() for line in content if not line.startswith('>')])
+    return sequence
+
+sequence = read_file(file_name)
 
 def find_cpg_sites(sequence):
 
@@ -11,12 +19,7 @@ def find_cpg_sites(sequence):
             cpg_sites.append(i)
     return cpg_sites
 
-def read_file(file_path):
-    with open(file_path, 'r') as file:
-        content = file.read().strip()
-    return content
 
-sequence = read_file(file_path)
 
 cpg_sites = find_cpg_sites(sequence)
 print("CpG sites found at indices:", cpg_sites)
